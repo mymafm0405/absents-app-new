@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-xs-12">
+        <form (ngSubmit)="onSubmit(addForm)" #addForm="ngForm">
+            <div class="form-group">
+                <label for="name">Student name</label>
+                <input type="text" id="name" class="form-control" placeholder="Student name" name="name" ngModel required>
+            </div>
+            <button class="btn btn-success" type="submit" [disabled]="!addForm.valid">Save</button>
+            <h4 *ngIf="message">{{ message }}</h4>
+        </form>
+    </div>
+</div>

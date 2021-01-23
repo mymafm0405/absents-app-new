@@ -8,6 +8,9 @@ import { AbsentButtonComponent } from './absent-button/absent-button.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { AbsentsListComponent } from './absents-list/absents-list.component';
 import { PresentsListComponent } from './presents-list/presents-list.component';
+import { AddFormComponent } from './add-form/add-form.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,10 +20,13 @@ import { PresentsListComponent } from './presents-list/presents-list.component';
     AbsentButtonComponent,
     SearchFormComponent,
     AbsentsListComponent,
-    PresentsListComponent
+    PresentsListComponent,
+    AddFormComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
