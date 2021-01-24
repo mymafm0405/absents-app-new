@@ -1,1 +1,6 @@
-<p>absent-button works!</p>
+<img
+  [src]="status ? '../../assets/images/on.png' : '../../assets/images/off.png'"
+  class="img-responsive"
+  width="50"
+  (click)="onButtonClicked()"
+/>

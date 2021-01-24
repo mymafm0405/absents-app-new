@@ -11,6 +11,8 @@ import { PresentsListComponent } from './presents-list/presents-list.component';
 import { AddFormComponent } from './add-form/add-form.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SaveReportFormComponent } from './save-report-form/save-report-form.component';
+import { LoadReportComponent } from './load-report/load-report.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
     SearchFormComponent,
     AbsentsListComponent,
     PresentsListComponent,
-    AddFormComponent
+    AddFormComponent,
+    SaveReportFormComponent,
+    LoadReportComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,8 @@
+<form (ngSubmit)="onSubmit(reportForm)" #reportForm="ngForm">
+    <div class="form-group">
+        <label for="date">Choose report date</label>
+        <input type="date" id="date" class="form-control" name="date" ngModel required>
+    </div>
+    <button class="btn btn-success btn-lg" type="submit" [disabled]="!reportForm.valid">Save changes</button>
+    <h4 *ngIf="message">{{ message }}</h4>
+</form>

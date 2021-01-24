@@ -1,0 +1,13 @@
+<form (ngSubmit)="onSubmit(loadForm)" #loadForm="ngForm">
+    <div class="form-group">
+        <label for="date">Select date to find report and update it</label>
+        <input type="date" class="form-control" id="date" name="date" ngModel required>
+    </div>
+    <button class="btn btn-danger" type="submit" [disabled]="!loadForm.valid">Load report</button>
+    <div *ngIf="message && reportFound" class="alert alert-success">
+        <h4>{{ message }}</h4>
+    </div>
+    <div *ngIf="message && !reportFound" class="alert alert-danger">
+        <h4>{{ message }}</h4>
+    </div>
+</form>

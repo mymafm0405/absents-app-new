@@ -3,6 +3,6 @@
         <h4>{{ student.name }}</h4>
     </div>
     <div class="col-xs-2">
-        <p>{{ student.status }}</p>
+        <app-absent-button [status]="student.status" [studentId]="student.id"></app-absent-button>
     </div>
 </div>

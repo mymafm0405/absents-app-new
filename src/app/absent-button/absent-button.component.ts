@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { StudentsService } from '../shared/students.service';
 
 @Component({
   selector: 'app-absent-button',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./absent-button.component.css']
 })
 export class AbsentButtonComponent implements OnInit {
-
-  constructor() { }
+  @Input() status: boolean;
+  @Input() studentId: string;
+  constructor(private studentsService: StudentsService) { }
 
   ngOnInit(): void {
+  }
+
+  onButtonClicked() {
+    this.studentsService.statusChanged(this.studentId, this.status);
   }
 
 }

@@ -1,3 +1,3 @@
 export class Student {
-    constructor(public name: string, public status: boolean) {}
+    constructor(public name: string, public status: boolean, public id?: string) {}
 }
