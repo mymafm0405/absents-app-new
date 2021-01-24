@@ -12,12 +12,15 @@ export class StudentsListComponent implements OnInit, OnDestroy {
   allStudents: Student[] = [];
   studentsSub: Subscription;
   dateChangeSub: Subscription;
+  noRepSub: Subscription;
   reportDate = '';
+  noReportDetected = false;
+  newRep = false;
 
   constructor(private studentsService: StudentsService) {}
 
   ngOnInit(): void {
-    
+
     this.reportDate = this.studentsService.getTodayDate();
 
     this.studentsSub = this.studentsService.studentsChanged.subscribe(
@@ -31,10 +34,23 @@ export class StudentsListComponent implements OnInit, OnDestroy {
         this.reportDate = date;
       }
     );
+
+    this.noRepSub = this.studentsService.noReportDetected.subscribe(
+      (repStatus) => {
+        this.noReportDetected = repStatus;
+        this.newRep = !repStatus;
+      }
+    )
+  }
+
+  onNewReport() {
+    this.newRep = true;
+    this.studentsService.getStudents();
   }
 
   ngOnDestroy() {
     this.studentsSub.unsubscribe();
     this.dateChangeSub.unsubscribe();
+    this.noRepSub.unsubscribe();
   }
 }

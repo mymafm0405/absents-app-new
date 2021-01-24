@@ -15,6 +15,7 @@ export class StudentsService {
 
   studentsChanged = new Subject<Student[]>();
   reportDateChanged = new Subject<string>();
+  noReportDetected = new Subject<boolean>();
 
   constructor(private http: HttpClient) { }
 
@@ -119,9 +120,12 @@ export class StudentsService {
       this.studentsChanged.next(this.currentReport.students);
       this.reportDateChanged.next(date);
       console.log('found');
+      this.noReportDetected.next(false);
       return true;
     } else {
-      this.studentsChanged.next(this.students);
+      this.noReportDetected.next(true);
+      // this.getStudents()
+      // this.studentsChanged.next(this.students);
       console.log('not found');
       return false;
     }

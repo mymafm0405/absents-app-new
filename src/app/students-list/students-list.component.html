@@ -1,4 +1,19 @@
-<h3>My Students List</h3>
-<h4>Report date: {{ reportDate }}</h4>
+<div class="row" *ngIf="!noReportDetected">
+  <div class="col-md-12">
+    <h4 class="text-center date-style">Report of date: <span>{{ reportDate }}</span></h4>
+  </div>
+</div>
+<div class="row text-center" *ngIf="noReportDetected && !newRep">
+  <div class="col-md-12">
+    <button class="btn btn-success" (click)="onNewReport()">New report</button>
+  </div>
+</div>
 <hr>
-<app-student *ngFor="let student of allStudents" [student]="student"></app-student>
+<div class="row stu-list-row" *ngIf="!noReportDetected || newRep">
+  <app-student *ngFor="let student of allStudents" [student]="student"></app-student>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <app-save-report-form></app-save-report-form>
+  </div>
+</div>

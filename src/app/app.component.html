@@ -1,4 +1,49 @@
-<h1>Students Absents App</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row banner">
+        <div class="col-md-12">
+          <h1 class="text-center">Students Absents App</h1>
+        </div>
+      </div>
+      <div class="row menu">
+        <div class="col-md-3 action">
+          <button class="btn btn-info" (click)="onHomeClick()">Home</button>
+        </div>
+        <div class="col-md-3 action">
+          <button class="btn btn-info" (click)="onAddClick()">Add Student</button>
+        </div>
+        <div class="col-md-3 action">
+          <button class="btn btn-info" (click)="onLoadClick()">Load Report</button>
+        </div>
+        <div class="col-md-3 action">
+          <button class="btn btn-info" (click)="onSummaryClick()" [disabled]="noRep">View Summary</button>
+        </div>
+      </div>
+      <div class="row" *ngIf="showAdd">
+        <div class="col-md-12">
+          <app-add-form></app-add-form>
+        </div>
+      </div>
+      <div class="row" *ngIf="showLoad">
+        <div class="col-md-12">
+          <app-load-report></app-load-report>
+        </div>
+      </div>
+      <div class="row" *ngIf="showSummary">
+        <div class="col-md-12">
+          <app-summary></app-summary>
+        </div>
+      </div>
+      <div class="row" *ngIf="showHome">
+        <div class="col-md-12">
+          <app-students-list></app-students-list>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <hr>
 <h3>Add new students</h3>
 <app-add-form></app-add-form>

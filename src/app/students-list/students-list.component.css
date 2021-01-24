@@ -1,0 +1,10 @@
+.stu-list-row {
+  background-color: antiquewhite;
+}
+.date-style {
+  color: brown;
+  font-weight: bold;
+}
+.date-style span {
+  color: red;
+}

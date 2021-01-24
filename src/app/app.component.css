@@ -1,0 +1,19 @@
+.banner {
+  border: 1px #333 solid;
+}
+.menu {
+  padding: 0;
+  margin-bottom: 20px;
+}
+.action {
+  padding: 0 2px;
+}
+.menu button {
+  width: 100%;
+  color: #333;
+  background-color: #ff5c69;
+}
+.menu button:hover {
+  background-color: brown;
+  color: white;
+}
