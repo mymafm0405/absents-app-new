@@ -110,10 +110,14 @@ export class StudentsService {
     console.log(this.allReports);
     if (this.checkReport(date)) {
       this.students = this.currentReport.students;
+      console.log(this.currentReport.students);
       this.studentsChanged.next(this.currentReport.students);
       this.reportDateChanged.next(date);
+      console.log('found');
       return true;
     } else {
+      this.studentsChanged.next(this.students);
+      console.log('not found');
       return false;
     }
   }
