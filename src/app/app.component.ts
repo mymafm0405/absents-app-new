@@ -33,6 +33,7 @@ export class AppComponent implements OnInit{
     this.showAdd = false;
     this.showLoad = false;
     this.showSummary = false;
+    this.studentsService.getReports();
   }
   onAddClick() {
     this.showAdd = !this.showAdd;
