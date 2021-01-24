@@ -1,1 +1,3 @@
-<p>presents-list works!</p>
+<div *ngFor="let student of students">
+    <app-student *ngIf="student.status" [student]="student" [summary]="true"></app-student>
+</div>

@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SaveReportFormComponent } from './save-report-form/save-report-form.component';
 import { LoadReportComponent } from './load-report/load-report.component';
+import { SummaryComponent } from './summary/summary.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LoadReportComponent } from './load-report/load-report.component';
     PresentsListComponent,
     AddFormComponent,
     SaveReportFormComponent,
-    LoadReportComponent
+    LoadReportComponent,
+    SummaryComponent
   ],
   imports: [
     BrowserModule,

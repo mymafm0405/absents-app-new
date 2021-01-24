@@ -39,6 +39,11 @@ export class StudentsService {
     )
   }
 
+  getCurrentLoadedStudents() {
+    console.log(this.students);
+    return this.students;
+  }
+
   addStudent(student: Student) {
     return this.http.post('https://absents-app-new-default-rtdb.firebaseio.com/students.json', student);
   }

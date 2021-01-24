@@ -19,7 +19,7 @@ export class SaveReportFormComponent implements OnInit {
     const date = reportForm.value.date;
     this.studentsService.saveReport(date).subscribe(
       () => {
-        this.message = 'Saved successfully';
+        this.message = 'Saved successfully in report of: ' + date;
         // This is to load new reports array after saving the new report
         this.studentsService.getReports();
         reportForm.reset();

@@ -8,6 +8,8 @@ import { Student } from '../shared/student.model';
 })
 export class StudentComponent implements OnInit {
   @Input() student: Student;
+  @Input() summary = false;
+  
   constructor() { }
 
   ngOnInit(): void {

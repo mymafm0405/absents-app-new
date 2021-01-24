@@ -8,3 +8,6 @@
 <app-students-list></app-students-list>
 <hr>
 <app-save-report-form></app-save-report-form>
+<hr>
+<button class="btn btn-primary" (click)="onShowSummary()">Show summary</button>
+<app-summary *ngIf="showSummary"></app-summary>

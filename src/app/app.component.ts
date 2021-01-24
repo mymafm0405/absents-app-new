@@ -7,11 +7,16 @@ import { StudentsService } from './shared/students.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
+  showSummary = false;
 
   constructor(private studentsService: StudentsService) {}
 
   ngOnInit() {
     this.studentsService.getStudents();
     this.studentsService.getReports();
+  }
+
+  onShowSummary() {
+    this.showSummary = !this.showSummary;
   }
 }
