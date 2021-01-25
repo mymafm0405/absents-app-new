@@ -1,6 +1,6 @@
-<div class="row" *ngIf="!noReportDetected">
+<div class="row date-row" *ngIf="!noReportDetected">
   <div class="col-md-12">
-    <h4 class="text-center date-style">Report of date: <span>{{ reportDate }}</span></h4>
+    <h4 class="text-center date-style"><span class="date-title">Report of date: <span class="red-style">{{ reportDate }}</span></span></h4>
   </div>
 </div>
 <div class="row text-center" *ngIf="noReportDetected && !newRep">
@@ -8,11 +8,17 @@
     <button class="btn btn-success" (click)="onNewReport()">New report</button>
   </div>
 </div>
-<hr>
+<hr class="no-margin-top">
 <div class="row stu-list-row" *ngIf="!noReportDetected || newRep">
   <app-student *ngFor="let student of allStudents" [student]="student"></app-student>
 </div>
-<div class="row">
+<hr>
+<div class="row text-center" *ngIf="!showSave">
+  <div class="col-md-12">
+    <button class="btn btn-success" (click)="onShowSaveForm()">Save / Update report</button>
+  </div>
+</div>
+<div class="row" *ngIf="showSave">
   <div class="col-md-12">
     <app-save-report-form></app-save-report-form>
   </div>

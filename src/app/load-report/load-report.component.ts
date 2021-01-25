@@ -13,6 +13,7 @@ export class LoadReportComponent implements OnInit {
   constructor(private studentsService: StudentsService) { }
 
   ngOnInit(): void {
+    console.log(this.message);
   }
 
   onSubmit(loadForm: NgForm) {
@@ -21,10 +22,16 @@ export class LoadReportComponent implements OnInit {
       this.message = 'Report loaded successfully for date: ' + date;
       this.reportFound = true;
       loadForm.reset();
+      setTimeout(() => {
+        this.message = undefined;
+      }, 2000)
     } else {
       this.message = 'No report found with this date: ' + date;
       this.reportFound = false;
       loadForm.reset();
+      setTimeout(() => {
+        this.message = undefined;
+      }, 2000)
     }
   }
 

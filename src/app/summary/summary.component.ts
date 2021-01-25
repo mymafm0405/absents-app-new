@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentsService } from '../shared/students.service';
 
 @Component({
   selector: 'app-summary',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./summary.component.css']
 })
 export class SummaryComponent implements OnInit {
-
-  constructor() { }
+  reportDate = '';
+  constructor(private studentsService: StudentsService) { }
 
   ngOnInit(): void {
+    this.reportDate = this.studentsService.getCurrentReportDate()
+    console.log(this.reportDate);
   }
 
 }

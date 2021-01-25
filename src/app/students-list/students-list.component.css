@@ -4,7 +4,20 @@
 .date-style {
   color: brown;
   font-weight: bold;
+  margin: 0;
 }
-.date-style span {
+.date-title {
+  background-color: antiquewhite;
+  padding: 10px 30px;
+  border: 1px dashed #666;
+  border-radius: 7px;
+}
+.red-style {
   color: red;
+}
+.date-row {
+  margin-top: 50px;
+}
+.no-margin-top {
+  margin-top: 11px;
 }

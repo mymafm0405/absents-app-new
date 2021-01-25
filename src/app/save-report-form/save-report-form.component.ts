@@ -9,6 +9,8 @@ import { StudentsService } from '../shared/students.service';
 })
 export class SaveReportFormComponent implements OnInit {
   message: string;
+  success = false;
+  fail = false;
 
   constructor(private studentsService: StudentsService) { }
 
@@ -23,9 +25,19 @@ export class SaveReportFormComponent implements OnInit {
         // This is to load new reports array after saving the new report
         this.studentsService.getReports();
         reportForm.reset();
+        this.success = true;
+        setTimeout(() => {
+          this.message = undefined;
+          this.success = false;
+        }, 2000);
       }, error => {
         this.message = 'Error occured, please try again later!';
         console.log(error);
+        this.fail = true;
+        setTimeout(() => {
+          this.message = undefined;
+          this.fail = false;
+        }, 2000);
       }
     )
   }

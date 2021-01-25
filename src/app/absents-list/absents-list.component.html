@@ -1,3 +1,12 @@
+<div class="row">
+    <div class="col-md-12">
+        <img src="../../assets/images/sad.png" class="img-responsive" width="50">
+        <h2 class="absents-title">الطالبات الغائبات</h2>
+    </div>
+</div>
 <div *ngFor="let student of students">
-    <app-student *ngIf="!student.status" [student]="student" [summary]="true"></app-student>
+    <div class="col-md-6" *ngIf="!student.status">
+        <h4 class="stu-name">{{ student.name }}</h4>
+    </div>
+    <!-- <app-student *ngIf="!student.status" [student]="student" [summary]="true"></app-student> -->
 </div>

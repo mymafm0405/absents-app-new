@@ -1,13 +1,27 @@
-<form (ngSubmit)="onSubmit(loadForm)" #loadForm="ngForm">
-    <div class="form-group">
-        <label for="date">Select date to find report and update it</label>
-        <input type="date" class="form-control" id="date" name="date" ngModel required>
+<div class="row text-center">
+    <div class="col-md-12">
+        <h4 class="title">Choose a date and click (Load report) to view it</h4>
     </div>
-    <button class="btn btn-danger" type="submit" [disabled]="!loadForm.valid">Load report</button>
-    <div *ngIf="message && reportFound" class="alert alert-success">
-        <h4>{{ message }}</h4>
+</div>
+<div class="row">
+    <div class="col-md-6 col-md-push-3">
+        <form (ngSubmit)="onSubmit(loadForm)" #loadForm="ngForm">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="form-group">
+                        <input type="date" class="form-control" id="date" name="date" ngModel required>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-danger" type="submit" [disabled]="!loadForm.valid">Load report</button>
+                </div>
+            </div>
+            <div *ngIf="message && reportFound" class="alert alert-success text-center">
+                <h4>{{ message }}</h4>
+            </div>
+            <div *ngIf="message && !reportFound" class="alert alert-danger text-center">
+                <h4>{{ message }}</h4>
+            </div>
+        </form>
     </div>
-    <div *ngIf="message && !reportFound" class="alert alert-danger">
-        <h4>{{ message }}</h4>
-    </div>
-</form>
+</div>

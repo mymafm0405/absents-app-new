@@ -1,5 +1,5 @@
-<div class="container">
-  <div class="row">
+<div class="container-fluid">
+  <div class="row all-app">
     <div class="col-md-12">
       <div class="row banner">
         <div class="col-md-12">
@@ -43,16 +43,3 @@
     </div>
   </div>
 </div>
-
-<hr>
-<h3>Add new students</h3>
-<app-add-form></app-add-form>
-<hr>
-<app-load-report></app-load-report>
-<hr>
-<app-students-list></app-students-list>
-<hr>
-<app-save-report-form></app-save-report-form>
-<hr>
-<button class="btn btn-primary" (click)="onShowSummary()">Show summary</button>
-<app-summary *ngIf="showSummary"></app-summary>

@@ -16,6 +16,7 @@ export class StudentsService {
   studentsChanged = new Subject<Student[]>();
   reportDateChanged = new Subject<string>();
   noReportDetected = new Subject<boolean>();
+  currentReportDate: string;
 
   constructor(private http: HttpClient) { }
 
@@ -90,6 +91,10 @@ export class StudentsService {
     return reportDate;
   }
 
+  getCurrentReportDate() {
+    return this.currentReportDate;
+  }
+
   saveReport(date: string) {
     if (this.checkReport(date)) {
       const reportId = this.currentReport.id;
@@ -119,6 +124,7 @@ export class StudentsService {
       console.log(this.currentReport.students);
       this.studentsChanged.next(this.currentReport.students);
       this.reportDateChanged.next(date);
+      this.currentReportDate = date;
       console.log('found');
       this.noReportDetected.next(false);
       return true;

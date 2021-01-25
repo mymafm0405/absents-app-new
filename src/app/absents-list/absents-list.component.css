@@ -1,0 +1,14 @@
+.stu-name {
+    background-color: #ff8989;
+    padding: 10px 0;
+    border-radius: 7px;
+    margin: 5px 0;
+    font-weight: bold;
+}
+img {
+    margin: 0 auto;
+}
+.absents-title {
+    font-weight: bold;
+    color: red;
+}

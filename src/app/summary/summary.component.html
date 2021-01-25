@@ -1,3 +1,22 @@
-<app-absents-list></app-absents-list>
-<hr>
-<app-presents-list></app-presents-list>
+<!-- <div class="row">
+    <div class="col-md-10 col-md-push-1">
+        <img src="../../assets/images/banner.png" class="img-responsive" height="100">
+    </div>
+</div> -->
+<div class="dash-border">
+    <div class="row text-center">
+        <div class="col-md-6 col-md-push-3">
+            <h3 class="title">كشف حضور وغياب طالبات الصف</h3>
+            <h2 class="title">2D</h2>
+            <h2 class="date-style"><span>{{ reportDate }}</span></h2>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-md-6 no-padding">
+            <app-absents-list></app-absents-list>
+        </div>
+        <div class="col-md-6 no-padding">
+            <app-presents-list></app-presents-list>
+        </div>
+    </div>
+</div>

@@ -1,12 +1,22 @@
 <div class="row">
-    <div class="col-xs-12">
+    <div class="col-md-6 col-md-push-3">
         <form (ngSubmit)="onSubmit(addForm)" #addForm="ngForm">
-            <div class="form-group">
-                <label for="name">Student name</label>
-                <input type="text" id="name" class="form-control" placeholder="Student name" name="name" ngModel required>
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="form-group">
+                        <input type="text" id="name" class="form-control" placeholder="Student name" name="name" ngModel required>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-success" type="submit" [disabled]="!addForm.valid">Save</button>
+                </div>
             </div>
-            <button class="btn btn-success" type="submit" [disabled]="!addForm.valid">Save</button>
-            <h4 *ngIf="message">{{ message }}</h4>
+            <div class="alert alert-success" *ngIf="message && success">
+                <h4>{{ message }}</h4>
+            </div>
+            <div class="alert alert-fail" *ngIf="message && fail">
+                <h4>{{ message }}</h4>
+            </div>
         </form>
     </div>
 </div>

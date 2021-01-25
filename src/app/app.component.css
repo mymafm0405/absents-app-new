@@ -1,17 +1,29 @@
+.all-app {
+  background-color: #ffaebe;
+  padding: 10px 10px;
+  border-radius: 10px;
+}
 .banner {
-  border: 1px #333 solid;
+  background-color: crimson;
+  color: white;
+  margin-bottom: 10px;
+  padding: 20px 0px;
+}
+.banner h1 {
+  padding: 0;
+  margin: 0;
 }
 .menu {
   padding: 0;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 .action {
   padding: 0 2px;
 }
 .menu button {
   width: 100%;
-  color: #333;
-  background-color: #ff5c69;
+  color: white;
+  background-color: #06a800;
 }
 .menu button:hover {
   background-color: brown;

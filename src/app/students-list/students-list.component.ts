@@ -16,6 +16,7 @@ export class StudentsListComponent implements OnInit, OnDestroy {
   reportDate = '';
   noReportDetected = false;
   newRep = false;
+  showSave = false;
 
   constructor(private studentsService: StudentsService) {}
 
@@ -46,6 +47,10 @@ export class StudentsListComponent implements OnInit, OnDestroy {
   onNewReport() {
     this.newRep = true;
     this.studentsService.getStudents();
+  }
+
+  onShowSaveForm() {
+    this.showSave = true;
   }
 
   ngOnDestroy() {

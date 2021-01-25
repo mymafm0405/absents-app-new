@@ -11,6 +11,7 @@ import { StudentsService } from '../shared/students.service';
 export class PresentsListComponent implements OnInit {
   students: Student[] = [];
   stuSub: Subscription;
+  count = 0;
   constructor(private studentsService: StudentsService) { }
 
   ngOnInit(): void {
